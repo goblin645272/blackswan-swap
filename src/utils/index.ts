@@ -17,13 +17,8 @@ export function isAddress(value: any): string | false {
   }
 }
 
-const BSCSCAN_PREFIXES: { [chainId in ChainId]: string } = {
-  56: '',
-  1001: 'testnet.',
-}
-
 export function getBscScanLink(chainId: ChainId, data: string, type: 'transaction' | 'token' | 'address'): string {
-  const prefix = `https://${BSCSCAN_PREFIXES[chainId] || BSCSCAN_PREFIXES[ChainId.MAINNET]}bscscan.com`
+  const prefix = `https://baobab.scope.klaytn.com`
 
   switch (type) {
     case 'transaction': {
@@ -34,7 +29,7 @@ export function getBscScanLink(chainId: ChainId, data: string, type: 'transactio
     }
     case 'address':
     default: {
-      return `${prefix}/address/${data}`
+      return `${prefix}/account/${data}`
     }
   }
 }

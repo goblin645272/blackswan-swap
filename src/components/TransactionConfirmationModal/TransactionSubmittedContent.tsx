@@ -25,7 +25,9 @@ const TransactionSubmittedContent = ({ onDismiss, chainId, hash }: TransactionSu
         </ConfirmedIcon>
         <AutoColumn gap="8px" justify="center">
           {chainId && hash && (
-            <LinkExternal href={getBscScanLink(chainId, hash, 'transaction')}>View on BscScan</LinkExternal>
+            <LinkExternal href={getBscScanLink(chainId, hash, 'transaction')}>
+              View on testnet baobab klaytn
+            </LinkExternal>
           )}
           <Button onClick={onDismiss} mt="20px">
             Close
